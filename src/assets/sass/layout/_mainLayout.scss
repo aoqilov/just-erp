@@ -1,0 +1,160 @@
+@use "./../mixin" as mx;
+
+.antd__layout {
+  height: 100vh;
+}
+.border-sidebar {
+  background-color: rgba(226, 226, 226, 1);
+  display: block;
+  height: 1px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 0 5px;
+}
+.sidebar {
+  position: relative;
+  padding: 0 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  &__logo {
+    height: 80px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__menu {
+    margin-top: 10px;
+    border: none !important; // c-ch-a
+    // c-ch-a
+    .ant-menu-item {
+      font-size: 18px !important;
+
+      .ant-menu-item-icon {
+        font-size: 24px !important;
+        position: relative;
+        right: 5px;
+      }
+    }
+    .ant-menu-item-selected {
+      background-color: #739bff !important;
+      color: white !important;
+    }
+  }
+  &__footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    .footer-menu {
+      border: none !important;
+      .ant-menu-item {
+        font-size: 16px !important;
+        &:nth-child(3) {
+          color: rgb(238, 87, 102) !important;
+        }
+        .ant-menu-item-icon {
+          font-size: 28px !important;
+          position: relative;
+          right: 5px;
+        }
+      }
+      .ant-menu-item-selected {
+        background-color: transparent !important;
+      }
+    }
+  }
+}
+
+.header {
+  box-shadow: 0px 4px 10px -8px rgba(0, 0, 0, 0.75);
+  background-color: white !important;
+  height: 80px;
+  padding: 0 20px 0 10px !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__colapse {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      min-width: 100%;
+      height: 100%;
+      font-size: 16px !important;
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+  &__user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    height: 80px;
+    overflow: hidden;
+    .user-notification {
+      width: 34px;
+      height: 34px;
+      @include mx.d-center;
+      background: rgba(246, 246, 246, 1);
+      border-radius: 7px;
+      overflow: hidden;
+      position: relative;
+      .count-notif {
+        position: absolute;
+        right: 4px;
+        top: 6px;
+        display: block;
+        width: 12px;
+        height: 12px;
+        background: rgb(212, 72, 76);
+        @include mx.d-center;
+        font-size: 9px;
+        border-radius: 50%;
+        color: white;
+      }
+    }
+    .userbox {
+      @include mx.d-center;
+      width: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      .user-icon {
+        // tsx changed
+      }
+      .user-info {
+        display: flex;
+        flex-direction: column;
+        line-height: 27px !important;
+        .info-name {
+          font-size: 12px;
+          font-weight: 500;
+          color: rgb(7, 7, 7, 1);
+        }
+        .info-degree {
+          padding: 0px 5px;
+          border-radius: 4px;
+          font-size: 10px;
+          color: rgba(81, 122, 154, 1);
+          background-color: rgba(237, 248, 254, 1);
+          width: fit-content;
+        }
+      }
+      .user-option {
+        padding: 4px 6px;
+        height: 20px !important;
+        @include mx.d-center;
+        border-radius: 7px;
+        cursor: pointer;
+        color: rgba(161, 161, 161, 1);
+        background-color: rgba(246, 246, 246, 1);
+      }
+    }
+  }
+}

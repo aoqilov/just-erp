@@ -1,0 +1,31 @@
+.custom-button {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+
+  &.ant-btn-primary {
+    background-color: #1677ff;
+    border-color: #1677ff;
+    &:hover {
+      background-color: #125ec7;
+    }
+  }
+
+  &.ant-btn-default {
+    background-color: #f0f0f0;
+    color: #333;
+    &:hover {
+      background-color: #d9d9d9;
+    }
+  }
+
+  &.ant-btn-danger {
+    background-color: #ff4d4f;
+    border-color: #ff4d4f;
+    &:hover {
+      background-color: #d9363e;
+    }
+  }
+}
