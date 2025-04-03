@@ -1,0 +1,14 @@
+.custom-date-picker {
+  position: relative;
+  display: inline-block;
+
+  .hidden-datepicker {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  input {
+    cursor: pointer;
+  }
+}

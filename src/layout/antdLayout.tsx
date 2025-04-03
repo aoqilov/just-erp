@@ -128,9 +128,9 @@ function AntdLayout({ children }) {
           </Header>
           <Content
             style={{
-              margin: "24px 16px",
-              padding: 24,
-              minHeight: 280,
+              marginTop: "30px",
+              marginLeft: "30px",
+              marginRight: "30px",
               borderRadius: borderRadiusLG,
             }}
           >

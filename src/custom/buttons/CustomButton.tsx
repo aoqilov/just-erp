@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 interface CustomButtonProps extends ButtonProps {
   children: ReactNode;
   icon?: ReactNode; // Icon qo‘shildi
+  onClick?: () => void;
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({
@@ -12,6 +13,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   type = "primary",
   loading = false,
   disabled = false,
+  onClick, // onClick propsini olish
   ...props
 }) => {
   return (
@@ -19,7 +21,9 @@ const CustomButton: React.FC<CustomButtonProps> = ({
       type={type}
       loading={loading}
       disabled={disabled}
-      icon={icon} // Iconni Ant Design buttoniga beramiz
+      icon={icon}
+      onClick={onClick}
+      // onClick propsini olish // Iconni Ant Design buttoniga beramiz
       {...props}
     >
       {children}

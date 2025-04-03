@@ -8,6 +8,9 @@ interface TextFieldProps {
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   disabled?: boolean;
   error?: string;
+  style?: React.CSSProperties;
+  // You can include other props here if needed
+  [key: string]: any; // This allows any other props to be passed down
 }
 
 const FieldOne: React.FC<TextFieldProps> = ({
@@ -17,16 +20,20 @@ const FieldOne: React.FC<TextFieldProps> = ({
   onChange,
   disabled,
   error,
+  style,
+  ...props
 }) => {
   return (
     <div className="custom-input">
       {label && <label className="input-label">{label}</label>}
       <Input
+        style={style}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
         disabled={disabled}
         className={`input-field ${error ? "input-error" : ""}`}
+        {...props}
       />
       {error && <span className="error-text">{error}</span>}
     </div>
@@ -34,30 +41,3 @@ const FieldOne: React.FC<TextFieldProps> = ({
 };
 
 export default FieldOne;
-
-// import { useState } from "react";
-// import TextField from "@/components/TextField";
-
-// const ExamplePage = () => {
-//   const [value, setValue] = useState("");
-//   const [error, setError] = useState("");
-
-//   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-//     setValue(e.target.value);
-//     setError(e.target.value ? "" : "Bu maydonni to'ldiring!");
-//   };
-
-//   return (
-//     <div style={{ padding: "20px" }}>
-//       <TextField
-//         label="Foydalanuvchi ismi"
-//         placeholder="Ismingizni kiriting"
-//         value={value}
-//         onChange={handleChange}
-//         error={error}
-//       />
-//     </div>
-//   );
-// };
-
-// export default ExamplePage;
